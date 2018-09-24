@@ -37,7 +37,11 @@ public class Member{
 		return screenName;
 	}
 	public void joinGroup(Group group, LocalDateTime dateJoined){
-		
+		Membership m = new Membership();
+		m.group = group;
+		m.setDateJoined(dateJoined);
+		memberships.add(m);
+		group.memberships = memberships;
 	}
 	public int getNumberGroups(){
 		return memberships.size();
@@ -55,8 +59,7 @@ public class Member{
 		ArrayList<Group> groups = new ArrayList<>();	
 		for(Membership m : memberships) {
 			groups.add(m.group);
-		}
-		
+		}		
 		return groups;
 	}
 	public void addQuestion(Group group, Question question, LocalDateTime date){
@@ -75,8 +78,7 @@ public class Member{
 				
 				dateJoined = m.getDateJoined();
 			}
-		}
-		
+		}		
 		return dateJoined;
 	}
 	public void addAnswer(Group group, Question question, Answer answer, LocalDateTime date){
@@ -106,6 +108,6 @@ public class Member{
 		return answers;
 	}
 	public String toString() {
-		return "Firstname : "+ firstname + "lasname: " +lastname + "ScreenName: " + screenName +"\n"+"Email Address : " + emailAddress + " Date Created: " + dateCreated + ".";	
+		return "Firstname : "+ firstname + " lasname: " +lastname + " ScreenName: " + screenName +"\n"+" Email Address : " + emailAddress + " Date Created: " + dateCreated + ".";	
 		}
 }

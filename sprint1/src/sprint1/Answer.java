@@ -18,6 +18,6 @@ public class Answer extends Post{
 		return question;		
 	}
 	public String toString(){
-		return "text: " + text + "date: ";
+		return "text: " + text + "date: " + date;
 	}
 }

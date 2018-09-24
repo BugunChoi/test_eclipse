@@ -17,5 +17,8 @@ class Membership {
 	
 	LocalDateTime getDateJoined() {
 		return dateJoined;
-	}	
+	}
+	public String toString(){
+		return " ";
+	}
 }

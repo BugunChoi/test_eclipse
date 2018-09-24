@@ -25,6 +25,6 @@ public class Question extends Post{
 		return answers;
 	}
 	public String toString(){
-		return "The title of this question is : " + title + " and the answer is "+ getAnswer();
+		return "The title is : " + title + " and the answer is "+ getAnswer();
 	}
 }
